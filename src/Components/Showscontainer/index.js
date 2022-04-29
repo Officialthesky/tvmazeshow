@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import "./index.css";
 export default function Showscontainer() {
   const [apiData, setApiData] = useState([]);
+  const navigate = useNavigate();
 
   const getApiData = async () => {
     await axios({
@@ -23,6 +25,10 @@ export default function Showscontainer() {
       });
   };
 
+  const openShowSummary = (shows) => {
+    navigate("/showinfo", { state: shows.show });
+  };
+
   useEffect(() => {
     getApiData();
   }, []);
@@ -33,9 +39,13 @@ export default function Showscontainer() {
         {apiData?.map((shows, index) => {
           return (
             <div key={index} className="showImgAndDetails">
-              <img src={shows.show.image.original} alt={shows.show.name} />
-              <p className="showName">
-                {shows.show.name} <span>({shows.show.language})</span>
+              <img
+                src={shows.show.image.original}
+                alt={shows.show.name}
+                onClick={() => openShowSummary(shows)}
+              />
+              <p className="showName" onClick={() => openShowSummary(shows)}>
+                {shows.show.name}
               </p>{" "}
               <p className="showGenres">
                 {shows.show.genres.map((item, ind) => {
