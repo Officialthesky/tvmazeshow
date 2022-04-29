@@ -1,5 +1,42 @@
 .showsContainer {
-  background-color: wheat;
+  background-color: white;
   min-height: 90vh;
   width: 100vw;
+  padding-bottom: 50px;
+}
+.showswithDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.showImgAndDetails {
+  width: 200px;
+  height: 300px;
+  margin: 20px 10px 20px 10px;
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+.showImgAndDetails img {
+  width: 100%;
+  height: 100%;
+}
+.showName,
+.showGenres {
+  padding: 10px 0px 10px 5px;
+  background-color: #3d948b;
+  color: #b9e3de;
+}
+.showName span {
+  color: white;
+}
+.showName {
+  cursor: pointer;
+}
+.showName:hover {
+  text-decoration: underline;
 }
