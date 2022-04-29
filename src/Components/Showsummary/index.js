@@ -5,7 +5,6 @@ import Modal from "../Modal";
 
 export default function Showsummary() {
   const location = useLocation();
-  console.log(location);
   const [openModalBox, setOpenModalBox] = useState();
   const toggleModal = () => {
     setOpenModalBox(!openModalBox);

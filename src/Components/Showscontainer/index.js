@@ -18,7 +18,6 @@ export default function Showscontainer() {
     })
       .then((res) => {
         setApiData(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -26,7 +25,7 @@ export default function Showscontainer() {
   };
 
   const openShowSummary = (shows) => {
-    navigate("/showinfo", { state: shows.show });
+    navigate(`/${shows.show.id}`, { state: shows.show });
   };
 
   useEffect(() => {

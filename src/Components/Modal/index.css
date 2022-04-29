@@ -9,13 +9,14 @@
 }
 .modalBox {
   width: 350px;
-  height: 200px;
+  min-height: 200px;
   background-color: #3d948b;
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 40px;
 }
 .modalOpen {
   width: 100%;
@@ -35,6 +36,10 @@
   font-weight: 900;
   font-size: 30px;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+.formDetails {
+  display: flex;
+  flex-direction: column;
 }
 .close {
   position: absolute;
