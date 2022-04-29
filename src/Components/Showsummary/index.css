@@ -48,6 +48,20 @@
   padding: 2px 0px 0px 20px;
   font-family: "Courier New", Courier, monospace;
 }
+.showImgAndBookBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.showImgAndBookBtn button {
+  background-color: #3d948b;
+  color: #b5d0c7;
+  padding: 15px 25px;
+  margin-top: 10px;
+  border: 0px;
+  cursor: pointer;
+}
 .showInfo {
   width: 370px;
   height: 300px;
