@@ -4,10 +4,26 @@ export default function Modal({ openModalBox, toggleModal, location }) {
   const [bookTkt, setBookTkt] = useState(false);
   const [name, setName] = useState();
   const [mobileNumber, setMobileNumber] = useState();
+  const [bookedDataFromLocal, setBookedDataFromLocal] = useState({});
 
   let bookedShow = JSON.parse(localStorage.getItem("bookedShow"));
 
   const bookTicket = () => {
+    if (!name) {
+      alert("please provide your name!");
+      return;
+    }
+
+    if (!mobileNumber) {
+      alert("please provide your mobile Number!");
+      return;
+    }
+
+    if (mobileNumber.length !== 10) {
+      alert("Mobile number should be of 10 digits!");
+      return;
+    }
+
     setBookTkt(true);
 
     let bookedData = [];
@@ -16,6 +32,7 @@ export default function Modal({ openModalBox, toggleModal, location }) {
       name,
       mobileNumber,
       id: location.state.id,
+      bookingTime: new Date(),
     };
 
     bookedData.push(moveeBooked);
@@ -46,11 +63,12 @@ export default function Modal({ openModalBox, toggleModal, location }) {
     setMobileNumber(e.target.value);
   };
   useEffect(() => {
-    let isBooked =
-      bookedShow?.filter((item) => location.state.id == item.id)?.length !== 0;
+    let bookedData = bookedShow?.filter((item) => location.state.id == item.id);
 
-    if (isBooked) {
+    if (bookedData?.length > 0) {
       setBookTkt(true);
+
+      setBookedDataFromLocal(bookedData[0]);
     }
   }, []);
 
@@ -64,10 +82,15 @@ export default function Modal({ openModalBox, toggleModal, location }) {
                 <>
                   {" "}
                   <p>Show booked successfully !!</p>
+                  <br />
+                  <p style={{ fontSize: 12 }}>
+                    {bookedDataFromLocal?.bookingTime &&
+                      `${new Date(bookedDataFromLocal?.bookingTime)}`}
+                  </p>
                   <p className="close" onClick={toggleModal}>
                     X
                   </p>
-                  <button className="bookBtn" onClick={cancelTicket}>
+                  <button className="bookBtn cancelBtn" onClick={cancelTicket}>
                     Cancel Ticket
                   </button>
                 </>

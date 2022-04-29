@@ -8,8 +8,8 @@
   align-items: center;
 }
 .modalBox {
-  width: 350px;
-  min-height: 200px;
+  width: 450px;
+  min-height: 250px;
   background-color: #3d948b;
   position: relative;
   display: flex;
@@ -17,6 +17,7 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 40px;
+  border-radius: 5px;
 }
 .modalOpen {
   width: 100%;
@@ -34,8 +35,8 @@
 .modalShowName {
   color: white;
   font-weight: 900;
-  font-size: 30px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 .formDetails {
   display: flex;
@@ -43,26 +44,47 @@
 }
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 12px;
+  right: 15px;
+  font-size: 20px;
   cursor: pointer;
-  opacity: 0.3;
+  color: red;
+  font-weight: bold;
 }
 .close:hover {
   opacity: 1;
+  transform: scale(1.2);
+  transition: all ease-in-out 0.2s;
 }
 form {
   margin: 20px 20px 0px 20px;
 }
 .bookBtn {
-  width: 100px;
-  height: 35px;
+  width: 150px;
   margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
 }
+
+.cancelBtn {
+  background-color: red;
+  color: #fff;
+}
+
 label {
   font-size: 20px;
   font-family: monospace;
 }
 input {
-  padding: 5px 10px;
+  padding: 10px 10px;
+  outline: none;
+  border: 1px solid rgba(204, 204, 204, 0.548);
+  background-color: transparent;
+  margin-bottom: 10px;
+  width: 280px;
+  border-radius: 5px;
 }
