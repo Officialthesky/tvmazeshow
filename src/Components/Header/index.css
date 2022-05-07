@@ -13,4 +13,5 @@ header {
 }
 .headerLogo {
   height: 6vh;
+  cursor: pointer;
 }

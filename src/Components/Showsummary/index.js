@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import "./index.css";
 import { useLocation } from "react-router-dom";
 import Modal from "../Modal";
+import { useNavigate } from "react-router-dom";
 
 export default function Showsummary() {
+  const navigate = useNavigate();
+  const goToHome = () => {
+    navigate(`/`);
+  };
   const location = useLocation();
   const [openModalBox, setOpenModalBox] = useState();
   const toggleModal = () => {
@@ -14,7 +19,8 @@ export default function Showsummary() {
       <div className="showSummary">
         <div className="summaryNavigation">
           <p>
-            HOME / <span>{location.state.name}</span>
+            <span onClick={goToHome}>HOME</span> /{" "}
+            <span>{location.state.name}</span>
           </p>
         </div>
         <div className="showImgAndInfo">
