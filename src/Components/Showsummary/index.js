@@ -19,7 +19,7 @@ export default function Showsummary() {
       <div className="showSummary">
         <div className="summaryNavigation">
           <p>
-            <span onClick={goToHome}>HOME</span> /{" "}
+            <span onClick={goToHome} className="homeRedirect">HOME</span> /{" "}
             <span>{location.state.name}</span>
           </p>
         </div>

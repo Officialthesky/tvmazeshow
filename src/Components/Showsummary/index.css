@@ -19,6 +19,12 @@
   padding-left: 40px;
   color: #b5d0c7;
 }
+.homeRedirect{
+  cursor: pointer;
+}
+.homeRedirect:hover{
+color:#3d948b;}
+
 .summaryNavigation span {
   color: #a9b6b1;
   text-transform: uppercase;
